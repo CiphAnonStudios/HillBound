@@ -1,1 +1,241 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hillbound</title>
 
+<meta
+    name="description"
+    content="Climb higher, drive farther, and push your vehicle to the limit in Hillbound."
+>
+
+<meta name="theme-color" content="#111111">
+
+<!-- Favicon -->
+<link
+    rel="icon"
+    type="image/png"
+    href="assets/images/ui/favicon.png"
+>
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/menu.css">
+
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+</head><body><!-- =========================================================
+     LOADING SCREEN
+========================================================== -->
+
+<div
+    id="loading-screen"
+    class="loading-screen"
+    aria-label="Loading Hillbound"
+>
+
+    <div class="loading-content">
+
+        <img
+            src="assets/images/ui/logo.png"
+            alt="Hillbound"
+            class="loading-logo"
+        >
+
+        <div
+            class="loading-bar"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+        >
+            <div id="loading-progress"></div>
+        </div>
+
+        <p id="loading-text">
+            Loading...
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MAIN MENU
+========================================================== -->
+
+<main
+    id="main-menu"
+    class="main-menu"
+>
+
+    <!-- Background -->
+    <div
+        class="menu-background"
+        aria-hidden="true"
+    >
+
+        <img
+            src="assets/images/backgrounds/menu-background.png"
+            alt=""
+        >
+
+    </div>
+
+
+    <!-- Background overlay -->
+    <div
+        class="menu-overlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =====================================================
+         MENU CONTENT
+    ====================================================== -->
+
+    <div class="menu-content">
+
+        <!-- Game Header -->
+        <header class="game-header">
+
+            <img
+                src="assets/images/ui/logo.png"
+                alt="Hillbound"
+                class="game-logo"
+            >
+
+            <p class="game-tagline">
+                Climb higher. Drive farther.
+            </p>
+
+        </header>
+
+
+        <!-- =================================================
+             MAIN NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="main-navigation"
+            aria-label="Main menu"
+        >
+
+            <a
+                href="pages/game.html"
+                class="menu-button primary"
+            >
+                <span>Play</span>
+            </a>
+
+
+            <a
+                href="pages/garage.html"
+                class="menu-button"
+            >
+                <span>Garage</span>
+            </a>
+
+
+            <a
+                href="pages/maps.html"
+                class="menu-button"
+            >
+                <span>Maps</span>
+            </a>
+
+
+            <a
+                href="pages/leaderboard.html"
+                class="menu-button"
+            >
+                <span>Leaderboard</span>
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             ACCOUNT
+        ================================================== -->
+
+        <section
+            class="account-section"
+            aria-label="Account"
+        >
+
+            <a
+                href="pages/login.html"
+                class="account-button"
+            >
+                <span>Login</span>
+            </a>
+
+
+            <a
+                href="pages/register.html"
+                class="account-button secondary"
+            >
+                <span>Create Account</span>
+            </a>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="menu-footer">
+
+        <div class="footer-left">
+
+            <span>Hillbound</span>
+
+            <span
+                class="footer-divider"
+                aria-hidden="true"
+            >
+                •
+            </span>
+
+            <span id="game-version">
+                v0.1.0
+            </span>
+
+        </div>
+
+
+        <div class="footer-right">
+
+            <a
+                href="pages/settings.html"
+                class="settings-link"
+            >
+                Settings
+            </a>
+
+        </div>
+
+    </footer>
+
+</main>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
