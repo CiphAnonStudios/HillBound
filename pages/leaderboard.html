@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#111111">
+
+    <meta
+        name="description"
+        content="Compete for the highest scores and best distances in Hillbound."
+    >
+
+    <title>Hillbound — Leaderboard</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../assets/images/ui/favicon.png"
+    >
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- Leaderboard Styles -->
+    <link rel="stylesheet" href="../css/leaderboard.css">
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="leaderboard-page">
+
+    <!-- ==========================================
+         PAGE HEADER
+    =========================================== -->
+
+    <header class="page-header">
+
+        <a
+            href="../index.html"
+            class="header-logo"
+            aria-label="Return to Hillbound home"
+        >
+            <img
+                src="../assets/images/ui/logo.png"
+                alt="Hillbound"
+            >
+        </a>
+
+
+        <nav
+            class="main-navigation"
+            aria-label="Main navigation"
+        >
+
+            <a href="game.html">
+                Play
+            </a>
+
+            <a href="garage.html">
+                Garage
+            </a>
+
+            <a href="maps.html">
+                Maps
+            </a>
+
+            <a
+                href="leaderboard.html"
+                class="active"
+                aria-current="page"
+            >
+                Leaderboard
+            </a>
+
+        </nav>
+
+
+        <div class="header-account">
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a href="settings.html">
+                Settings
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         LEADERBOARD CONTENT
+    =========================================== -->
+
+    <main class="leaderboard-container">
+
+        <!-- Page Heading -->
+        <section class="page-title">
+
+            <p class="eyebrow">
+                COMPETE
+            </p>
+
+            <h1>
+                Leaderboard
+            </h1>
+
+            <p>
+                Push your limits and climb the rankings.
+            </p>
+
+        </section>
+
+
+        <!-- ======================================
+             LEADERBOARD CONTROLS
+        ======================================= -->
+
+        <section class="leaderboard-controls">
+
+            <!-- Map Filter -->
+            <div class="leaderboard-filter">
+
+                <label for="map-filter">
+                    Map
+                </label>
+
+                <select id="map-filter">
+
+                    <option value="global">
+                        Global
+                    </option>
+
+                    <option value="countryside">
+                        Countryside
+                    </option>
+
+                    <option value="desert">
+                        Desert
+                    </option>
+
+                    <option value="moon">
+                        Moon
+                    </option>
+
+                    <option value="snow">
+                        Snow
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Score Filter -->
+            <div class="leaderboard-filter">
+
+                <label for="score-filter">
+                    Ranking
+                </label>
+
+                <select id="score-filter">
+
+                    <option value="distance">
+                        Distance
+                    </option>
+
+                    <option value="score">
+                        Score
+                    </option>
+
+                    <option value="coins">
+                        Coins
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Refresh -->
+            <button
+                type="button"
+                id="refresh-leaderboard"
+                class="refresh-button"
+                aria-label="Refresh leaderboard"
+            >
+                ↻
+                <span>
+                    Refresh
+                </span>
+            </button>
+
+        </section>
+
+
+        <!-- ======================================
+             TOP THREE
+        ======================================= -->
+
+        <section class="podium-section">
+
+            <!-- Second Place -->
+            <article
+                class="podium-card second-place"
+                data-rank="2"
+            >
+
+                <div class="podium-rank">
+                    #2
+                </div>
+
+                <div class="player-avatar">
+
+                    <img
+                        src="../assets/images/icons/profile.png"
+                        alt=""
+                    >
+
+                </div>
+
+                <span
+                    class="podium-username"
+                    data-player="second"
+                >
+                    Player
+                </span>
+
+                <strong
+                    class="podium-score"
+                    data-score="second"
+                >
+                    0 m
+                </strong>
+
+            </article>
+
+
+            <!-- First Place -->
+            <article
+                class="podium-card first-place"
+                data-rank="1"
+            >
+
+                <div class="podium-crown">
+                    ★
+                </div>
+
+                <div class="podium-rank">
+                    #1
+                </div>
+
+                <div class="player-avatar">
+
+                    <img
+                        src="../assets/images/icons/profile.png"
+                        alt=""
+                    >
+
+                </div>
+
+                <span
+                    class="podium-username"
+                    data-player="first"
+                >
+                    Player
+                </span>
+
+                <strong
+                    class="podium-score"
+                    data-score="first"
+                >
+                    0 m
+                </strong>
+
+            </article>
+
+
+            <!-- Third Place -->
+            <article
+                class="podium-card third-place"
+                data-rank="3"
+            >
+
+                <div class="podium-rank">
+                    #3
+                </div>
+
+                <div class="player-avatar">
+
+                    <img
+                        src="../assets/images/icons/profile.png"
+                        alt=""
+                    >
+
+                </div>
+
+                <span
+                    class="podium-username"
+                    data-player="third"
+                >
+                    Player
+                </span>
+
+                <strong
+                    class="podium-score"
+                    data-score="third"
+                >
+                    0 m
+                </strong>
+
+            </article>
+
+        </section>
+
+
+        <!-- ======================================
+             LEADERBOARD TABLE
+        ======================================= -->
+
+        <section class="leaderboard-section">
+
+            <div class="leaderboard-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        RANKINGS
+                    </p>
+
+                    <h2 id="leaderboard-title">
+                        Global Rankings
+                    </h2>
+
+                </div>
+
+                <span
+                    id="leaderboard-status"
+                    class="leaderboard-status"
+                >
+                    Offline
+                </span>
+
+            </div>
+
+
+            <div class="leaderboard-table-wrapper">
+
+                <table class="leaderboard-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th scope="col">
+                                Rank
+                            </th>
+
+                            <th scope="col">
+                                Player
+                            </th>
+
+                            <th scope="col">
+                                Vehicle
+                            </th>
+
+                            <th scope="col">
+                                Distance
+                            </th>
+
+                            <th scope="col">
+                                Score
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="leaderboard-body">
+
+                        <!-- Row 1 -->
+                        <tr data-rank="1">
+
+                            <td class="rank">
+                                1
+                            </td>
+
+                            <td class="player-cell">
+
+                                <img
+                                    src="../assets/images/icons/profile.png"
+                                    alt=""
+                                >
+
+                                <span>
+                                    Player
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Starter Car
+                            </td>
+
+                            <td>
+                                0 m
+                            </td>
+
+                            <td>
+                                0
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Row 2 -->
+                        <tr data-rank="2">
+
+                            <td class="rank">
+                                2
+                            </td>
+
+                            <td class="player-cell">
+
+                                <img
+                                    src="../assets/images/icons/profile.png"
+                                    alt=""
+                                >
+
+                                <span>
+                                    Player
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Starter Car
+                            </td>
+
+                            <td>
+                                0 m
+                            </td>
+
+                            <td>
+                                0
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Row 3 -->
+                        <tr data-rank="3">
+
+                            <td class="rank">
+                                3
+                            </td>
+
+                            <td class="player-cell">
+
+                                <img
+                                    src="../assets/images/icons/profile.png"
+                                    alt=""
+                                >
+
+                                <span>
+                                    Player
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Starter Car
+                            </td>
+
+                            <td>
+                                0 m
+                            </td>
+
+                            <td>
+                                0
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Row 4 -->
+                        <tr data-rank="4">
+
+                            <td class="rank">
+                                4
+                            </td>
+
+                            <td class="player-cell">
+
+                                <img
+                                    src="../assets/images/icons/profile.png"
+                                    alt=""
+                                >
+
+                                <span>
+                                    Player
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Starter Car
+                            </td>
+
+                            <td>
+                                0 m
+                            </td>
+
+                            <td>
+                                0
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Row 5 -->
+                        <tr data-rank="5">
+
+                            <td class="rank">
+                                5
+                            </td>
+
+                            <td class="player-cell">
+
+                                <img
+                                    src="../assets/images/icons/profile.png"
+                                    alt=""
+                                >
+
+                                <span>
+                                    Player
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Starter Car
+                            </td>
+
+                            <td>
+                                0 m
+                            </td>
+
+                            <td>
+                                0
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             YOUR RANK
+        ======================================= -->
+
+        <section class="your-rank-section">
+
+            <div class="your-rank-card">
+
+                <div class="your-rank-label">
+                    YOUR BEST
+                </div>
+
+                <div class="your-rank-content">
+
+                    <div class="your-rank-position">
+
+                        <span>
+                            Rank
+                        </span>
+
+                        <strong id="your-rank">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="your-rank-player">
+
+                        <img
+                            src="../assets/images/icons/profile.png"
+                            alt=""
+                        >
+
+                        <div>
+
+                            <strong id="your-username">
+                                Guest
+                            </strong>
+
+                            <span>
+                                Your current ranking
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="your-rank-score">
+
+                        <span>
+                            Best Distance
+                        </span>
+
+                        <strong id="your-best-distance">
+                            0 m
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             LOGIN PROMPT
+        ======================================= -->
+
+        <section
+            id="leaderboard-login-prompt"
+            class="leaderboard-login-prompt"
+        >
+
+            <div>
+
+                <span class="eyebrow">
+                    WANT TO COMPETE?
+                </span>
+
+                <h2>
+                    Create an account
+                </h2>
+
+                <p>
+                    Save your records, appear on the global leaderboard,
+                    and track your progress across devices.
+                </p>
+
+            </div>
+
+            <div class="login-prompt-actions">
+
+                <a
+                    href="register.html"
+                    class="primary-button"
+                >
+                    Create Account
+                </a>
+
+                <a
+                    href="login.html"
+                    class="secondary-button"
+                >
+                    Log In
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         NOTIFICATION
+    =========================================== -->
+
+    <div
+        id="leaderboard-notification"
+        class="leaderboard-notification"
+        role="status"
+        aria-live="polite"
+        hidden
+    ></div>
+
+
+    <!-- ==========================================
+         SCRIPTS
+    =========================================== -->
+
+    <script
+        src="../js/database/leaderboard.js"
+        defer
+    ></script>
+
+</body>
+</html>
