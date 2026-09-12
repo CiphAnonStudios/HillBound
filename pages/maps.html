@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#111111">
+
+    <meta
+        name="description"
+        content="Choose your next destination in Hillbound."
+    >
+
+    <title>Hillbound — Maps</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../assets/images/ui/favicon.png"
+    >
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- Map Styles -->
+    <link rel="stylesheet" href="../css/maps.css">
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="maps-page">
+
+    <!-- ==========================================
+         PAGE HEADER
+    =========================================== -->
+
+    <header class="page-header">
+
+        <a
+            href="../index.html"
+            class="header-logo"
+            aria-label="Return to Hillbound home"
+        >
+            <img
+                src="../assets/images/ui/logo.png"
+                alt="Hillbound"
+            >
+        </a>
+
+
+        <nav
+            class="main-navigation"
+            aria-label="Main navigation"
+        >
+
+            <a href="game.html">
+                Play
+            </a>
+
+            <a href="garage.html">
+                Garage
+            </a>
+
+            <a
+                href="maps.html"
+                class="active"
+                aria-current="page"
+            >
+                Maps
+            </a>
+
+            <a href="leaderboard.html">
+                Leaderboard
+            </a>
+
+        </nav>
+
+
+        <div class="header-account">
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a href="settings.html">
+                Settings
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         MAP CONTENT
+    =========================================== -->
+
+    <main class="maps-container">
+
+        <!-- Page Heading -->
+        <section class="page-title">
+
+            <p class="eyebrow">
+                DESTINATIONS
+            </p>
+
+            <h1>
+                Choose Your Map
+            </h1>
+
+            <p>
+                Every environment brings new terrain, challenges, and records.
+            </p>
+
+        </section>
+
+
+        <!-- ======================================
+             CURRENT MAP
+        ======================================= -->
+
+        <section class="selected-map-panel">
+
+            <div class="selected-map-image">
+
+                <img
+                    id="selected-map-background"
+                    src="../assets/images/backgrounds/countryside.png"
+                    alt="Countryside map"
+                >
+
+                <div class="selected-map-overlay"></div>
+
+                <div class="selected-map-content">
+
+                    <span
+                        id="selected-map-status"
+                        class="map-status"
+                    >
+                        SELECTED
+                    </span>
+
+                    <h2 id="selected-map-name">
+                        Countryside
+                    </h2>
+
+                    <p id="selected-map-description">
+                        Rolling hills and open fields. A great place to start your climb.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="selected-map-stats">
+
+                <div class="map-stat">
+
+                    <span class="map-stat-label">
+                        Difficulty
+                    </span>
+
+                    <strong id="selected-map-difficulty">
+                        Easy
+                    </strong>
+
+                </div>
+
+
+                <div class="map-stat">
+
+                    <span class="map-stat-label">
+                        Best Distance
+                    </span>
+
+                    <strong id="selected-map-best">
+                        0 m
+                    </strong>
+
+                </div>
+
+
+                <div class="map-stat">
+
+                    <span class="map-stat-label">
+                        Terrain
+                    </span>
+
+                    <strong id="selected-map-terrain">
+                        Grass
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="play-selected-map"
+                    class="map-play-button primary-button"
+                >
+                    Play Map
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             MAP GRID
+        ======================================= -->
+
+        <section class="maps-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        EXPLORE
+                    </p>
+
+                    <h2>
+                        Maps
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="map-grid">
+
+                <!-- ==================================
+                     COUNTRYSIDE
+                =================================== -->
+
+                <article
+                    class="map-card active"
+                    data-map="countryside"
+                    data-name="Countryside"
+                    data-description="Rolling hills and open fields. A great place to start your climb."
+                    data-difficulty="Easy"
+                    data-terrain="Grass"
+                    data-background="../assets/images/backgrounds/countryside.png"
+                >
+
+                    <button
+                        type="button"
+                        class="map-card-button"
+                        aria-label="Select Countryside map"
+                    >
+
+                        <div class="map-card-image">
+
+                            <img
+                                src="../assets/images/backgrounds/countryside.png"
+                                alt="Countryside"
+                                loading="lazy"
+                            >
+
+                            <span class="map-card-status">
+                                AVAILABLE
+                            </span>
+
+                        </div>
+
+
+                        <div class="map-card-content">
+
+                            <div>
+
+                                <span class="map-number">
+                                    MAP 01
+                                </span>
+
+                                <h3>
+                                    Countryside
+                                </h3>
+
+                            </div>
+
+                            <span class="map-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+
+                        <div class="map-card-footer">
+
+                            <span>
+                                Easy
+                            </span>
+
+                            <span>
+                                Grass
+                            </span>
+
+                            <span>
+                                Best:
+                                <strong data-best-distance="countryside">
+                                    0 m
+                                </strong>
+                            </span>
+
+                        </div>
+
+                    </button>
+
+                </article>
+
+
+                <!-- ==================================
+                     DESERT
+                =================================== -->
+
+                <article
+                    class="map-card"
+                    data-map="desert"
+                    data-name="Desert"
+                    data-description="Hot dunes, steep climbs, and long stretches of unforgiving terrain."
+                    data-difficulty="Medium"
+                    data-terrain="Sand"
+                    data-background="../assets/images/backgrounds/desert.png"
+                >
+
+                    <button
+                        type="button"
+                        class="map-card-button"
+                        aria-label="Select Desert map"
+                    >
+
+                        <div class="map-card-image">
+
+                            <img
+                                src="../assets/images/backgrounds/desert.png"
+                                alt="Desert"
+                                loading="lazy"
+                            >
+
+                            <span class="map-card-status">
+                                LOCKED
+                            </span>
+
+                        </div>
+
+
+                        <div class="map-card-content">
+
+                            <div>
+
+                                <span class="map-number">
+                                    MAP 02
+                                </span>
+
+                                <h3>
+                                    Desert
+                                </h3>
+
+                            </div>
+
+                            <span class="map-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+
+                        <div class="map-card-footer">
+
+                            <span>
+                                Medium
+                            </span>
+
+                            <span>
+                                Sand
+                            </span>
+
+                            <span>
+                                Best:
+                                <strong data-best-distance="desert">
+                                    0 m
+                                </strong>
+                            </span>
+
+                        </div>
+
+                    </button>
+
+                </article>
+
+
+                <!-- ==================================
+                     MOON
+                =================================== -->
+
+                <article
+                    class="map-card"
+                    data-map="moon"
+                    data-name="Moon"
+                    data-description="Low gravity, huge jumps, and a completely different way to climb."
+                    data-difficulty="Hard"
+                    data-terrain="Moon Rock"
+                    data-background="../assets/images/backgrounds/moon.png"
+                >
+
+                    <button
+                        type="button"
+                        class="map-card-button"
+                        aria-label="Select Moon map"
+                    >
+
+                        <div class="map-card-image">
+
+                            <img
+                                src="../assets/images/backgrounds/moon.png"
+                                alt="Moon"
+                                loading="lazy"
+                            >
+
+                            <span class="map-card-status">
+                                LOCKED
+                            </span>
+
+                        </div>
+
+
+                        <div class="map-card-content">
+
+                            <div>
+
+                                <span class="map-number">
+                                    MAP 03
+                                </span>
+
+                                <h3>
+                                    Moon
+                                </h3>
+
+                            </div>
+
+                            <span class="map-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+
+                        <div class="map-card-footer">
+
+                            <span>
+                                Hard
+                            </span>
+
+                            <span>
+                                Moon Rock
+                            </span>
+
+                            <span>
+                                Best:
+                                <strong data-best-distance="moon">
+                                    0 m
+                                </strong>
+                            </span>
+
+                        </div>
+
+                    </button>
+
+                </article>
+
+
+                <!-- ==================================
+                     SNOW
+                =================================== -->
+
+                <article
+                    class="map-card"
+                    data-map="snow"
+                    data-name="Snow"
+                    data-description="Icy hills and slippery terrain that put your control to the test."
+                    data-difficulty="Hard"
+                    data-terrain="Snow"
+                    data-background="../assets/images/backgrounds/snow.png"
+                >
+
+                    <button
+                        type="button"
+                        class="map-card-button"
+                        aria-label="Select Snow map"
+                    >
+
+                        <div class="map-card-image">
+
+                            <img
+                                src="../assets/images/backgrounds/snow.png"
+                                alt="Snow"
+                                loading="lazy"
+                            >
+
+                            <span class="map-card-status">
+                                LOCKED
+                            </span>
+
+                        </div>
+
+
+                        <div class="map-card-content">
+
+                            <div>
+
+                                <span class="map-number">
+                                    MAP 04
+                                </span>
+
+                                <h3>
+                                    Snow
+                                </h3>
+
+                            </div>
+
+                            <span class="map-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+
+                        <div class="map-card-footer">
+
+                            <span>
+                                Hard
+                            </span>
+
+                            <span>
+                                Snow
+                            </span>
+
+                            <span>
+                                Best:
+                                <strong data-best-distance="snow">
+                                    0 m
+                                </strong>
+                            </span>
+
+                        </div>
+
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             FUTURE MAPS
+        ======================================= -->
+
+        <section class="coming-soon-section">
+
+            <div class="coming-soon-card">
+
+                <span class="coming-soon-icon">
+                    +
+                </span>
+
+                <div>
+
+                    <span class="eyebrow">
+                        MORE TO COME
+                    </span>
+
+                    <h2>
+                        New Maps
+                    </h2>
+
+                    <p>
+                        More environments, terrain types, obstacles, and challenges
+                        will be added as Hillbound grows.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         MAP NOTIFICATION
+    =========================================== -->
+
+    <div
+        id="map-notification"
+        class="map-notification"
+        role="status"
+        aria-live="polite"
+        hidden
+    ></div>
+
+
+    <!-- ==========================================
+         SCRIPTS
+    =========================================== -->
+
+    <script
+        src="../js/maps/maps.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/maps/countryside.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/maps/desert.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/maps/moon.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/maps/snow.js"
+        defer
+    ></script>
+
+</body>
+</html>
