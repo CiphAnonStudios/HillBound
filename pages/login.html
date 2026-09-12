@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#111111">
+    <meta
+        name="description"
+        content="Log in to your Hillbound account."
+    >
+
+    <title>Hillbound — Login</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../assets/images/ui/favicon.png"
+    >
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- Authentication Styles -->
+    <link rel="stylesheet" href="../css/auth.css">
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="auth-page">
+
+    <!-- ==========================================
+         AUTHENTICATION CONTAINER
+    =========================================== -->
+
+    <main class="auth-container">
+
+        <!-- Background -->
+        <div class="auth-background"></div>
+
+        <!-- Dark Overlay -->
+        <div class="auth-overlay"></div>
+
+
+        <!-- ======================================
+             LOGIN CARD
+        ======================================= -->
+
+        <section class="auth-card">
+
+            <!-- Logo -->
+            <a
+                href="../index.html"
+                class="auth-logo-link"
+                aria-label="Return to Hillbound home"
+            >
+                <img
+                    src="../assets/images/ui/logo.png"
+                    alt="Hillbound"
+                    class="auth-logo"
+                >
+            </a>
+
+            <h1>Welcome Back</h1>
+
+            <p class="auth-subtitle">
+                Log in to continue your climb.
+            </p>
+
+
+            <!-- ==================================
+                 LOGIN FORM
+            =================================== -->
+
+            <form
+                id="login-form"
+                class="auth-form"
+                novalidate
+            >
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="login-email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="login-email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    <div class="password-label-row">
+
+                        <label for="login-password">
+                            Password
+                        </label>
+
+                        <a
+                            href="#"
+                            id="forgot-password"
+                            class="forgot-password"
+                        >
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+                    <div class="password-input-wrapper">
+
+                        <input
+                            type="password"
+                            id="login-password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggle-password"
+                            class="password-toggle"
+                            aria-label="Show password"
+                            aria-pressed="false"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Remember Me -->
+                <div class="remember-row">
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="remember-me"
+                            name="remember"
+                        >
+
+                        <span>
+                            Remember me
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Error Message -->
+                <div
+                    id="login-error"
+                    class="auth-message auth-error"
+                    role="alert"
+                    aria-live="polite"
+                    hidden
+                ></div>
+
+
+                <!-- Success Message -->
+                <div
+                    id="login-success"
+                    class="auth-message auth-success"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></div>
+
+
+                <!-- Login Button -->
+                <button
+                    type="submit"
+                    id="login-button"
+                    class="auth-button primary-button"
+                >
+                    <span class="button-text">
+                        Log In
+                    </span>
+
+                    <span
+                        class="button-loading"
+                        hidden
+                    >
+                        Logging in...
+                    </span>
+                </button>
+
+            </form>
+
+
+            <!-- ==================================
+                 REGISTER LINK
+            =================================== -->
+
+            <div class="auth-divider">
+                <span>or</span>
+            </div>
+
+            <p class="auth-switch">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+            </p>
+
+
+            <!-- Back to Home -->
+            <a
+                href="../index.html"
+                class="back-home"
+            >
+                ← Back to Hillbound
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         LOGIN SCRIPT
+    =========================================== -->
+
+    <script
+        src="../js/auth/login.js"
+        defer
+    ></script>
+
+</body>
+</html>
