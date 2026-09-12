@@ -1,0 +1,559 @@
+/* =========================================================
+HILLBOUND — MOBILE STYLES
+Shared mobile/tablet behavior
+========================================================= */
+
+/* =========================================================
+MOBILE VIEWPORT
+========================================================= */
+
+html,
+body {
+width: 100%;
+min-height: 100%;
+}
+
+body {
+-webkit-tap-highlight-color: transparent;
+overscroll-behavior: none;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+-webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+touch-action: manipulation;
+}
+
+/* =========================================================
+MOBILE GAME PAGE
+========================================================= */
+
+.game-page {
+width: 100%;
+min-height: 100vh;
+min-height: 100dvh;
+overflow: hidden;
+position: relative;
+}
+
+.game-page #game-container {
+width: 100%;
+height: 100vh;
+height: 100dvh;
+overflow: hidden;
+}
+
+.game-page #game-canvas {
+display: block;
+width: 100%;
+height: 100%;
+max-width: 100%;
+touch-action: none;
+user-select: none;
+-webkit-user-select: none;
+}
+
+/* =========================================================
+TOUCH CONTROLS
+========================================================= */
+
+.mobile-controls {
+position: fixed;
+z-index: 50;
+left: 0;
+right: 0;
+bottom: 0;
+
+display: none;
+align-items: flex-end;
+justify-content: space-between;
+
+width: 100%;
+padding:
+    18px
+    max(18px, env(safe-area-inset-right))
+    max(18px, env(safe-area-inset-bottom))
+    max(18px, env(safe-area-inset-left));
+
+pointer-events: none;
+user-select: none;
+-webkit-user-select: none;
+
+}
+
+.mobile-control {
+width: clamp(68px, 11vw, 96px);
+height: clamp(68px, 11vw, 96px);
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+color: var(--text);
+background: rgba(17, 17, 17, 0.72);
+border: 1px solid rgba(255, 255, 255, 0.14);
+border-radius: 50%;
+
+font-size: clamp(22px, 4vw, 32px);
+font-weight: 800;
+
+box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+
+cursor: pointer;
+pointer-events: auto;
+
+touch-action: none;
+user-select: none;
+-webkit-user-select: none;
+
+transition:
+    transform 0.08s ease,
+    background 0.08s ease,
+    border-color 0.08s ease;
+
+}
+
+.mobile-control:active,
+.mobile-control.pressed {
+transform: scale(0.92);
+background: var(--primary);
+border-color: var(--primary);
+color: #ffffff;
+}
+
+.mobile-control.brake {
+margin-right: auto;
+}
+
+.mobile-control.gas {
+margin-left: auto;
+}
+
+/* =========================================================
+MOBILE GAME HUD
+========================================================= */
+
+.game-page .game-hud {
+padding:
+max(12px, env(safe-area-inset-top))
+max(14px, env(safe-area-inset-right))
+0
+max(14px, env(safe-area-inset-left));
+
+pointer-events: none;
+
+}
+
+.game-page .pause-button {
+pointer-events: auto;
+touch-action: manipulation;
+}
+
+.game-page .hud-stat,
+.game-page .hud-coins,
+.game-page .hud-fuel {
+user-select: none;
+-webkit-user-select: none;
+}
+
+/* =========================================================
+MOBILE MODALS
+========================================================= */
+
+.game-overlay {
+padding:
+max(18px, env(safe-area-inset-top))
+max(18px, env(safe-area-inset-right))
+max(18px, env(safe-area-inset-bottom))
+max(18px, env(safe-area-inset-left));
+}
+
+.game-modal {
+max-width: min(440px, calc(100vw - 36px));
+max-height: calc(100dvh - 36px);
+overflow-y: auto;
+overscroll-behavior: contain;
+}
+
+/* =========================================================
+MOBILE FORM CONTROLS
+========================================================= */
+
+input,
+select,
+textarea {
+font-size: 16px;
+}
+
+@media (min-width: 641px) {
+input,
+select,
+textarea {
+font-size: inherit;
+}
+}
+
+/* =========================================================
+MOBILE BUTTONS
+========================================================= */
+
+@media (max-width: 640px) {
+.btn {
+min-height: 42px;
+touch-action: manipulation;
+}
+
+.btn-small {
+    min-height: 38px;
+}
+
+.btn-large {
+    min-height: 46px;
+}
+
+}
+
+/* =========================================================
+MOBILE CARDS
+========================================================= */
+
+@media (max-width: 640px) {
+.card,
+.panel {
+border-radius: 11px;
+}
+}
+
+/* =========================================================
+LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+.game-page {
+width: 100vw;
+height: 100vh;
+height: 100dvh;
+min-height: 0;
+}
+
+.game-page #game-container {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+}
+
+.mobile-controls {
+    display: flex;
+    padding:
+        12px
+        max(16px, env(safe-area-inset-right))
+        max(12px, env(safe-area-inset-bottom))
+        max(16px, env(safe-area-inset-left));
+}
+
+.mobile-control {
+    width: clamp(58px, 10vh, 82px);
+    height: clamp(58px, 10vh, 82px);
+    font-size: clamp(20px, 4vh, 28px);
+}
+
+.game-page .game-hud {
+    padding:
+        max(8px, env(safe-area-inset-top))
+        max(12px, env(safe-area-inset-right))
+        0
+        max(12px, env(safe-area-inset-left));
+}
+
+.game-page .hud-stat {
+    min-width: 0;
+}
+
+}
+
+/* =========================================================
+PORTRAIT MOBILE
+========================================================= */
+
+@media (max-width: 900px) and (orientation: portrait) {
+.game-page {
+overflow: hidden;
+}
+
+.game-page #game-container {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+}
+
+.game-page .game-hud,
+.game-page .mobile-controls {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+}
+
+/* =========================================================
+SMALL LANDSCAPE PHONES
+========================================================= */
+
+@media (max-width: 700px) and (orientation: landscape) {
+.mobile-controls {
+padding-left: max(10px, env(safe-area-inset-left));
+padding-right: max(10px, env(safe-area-inset-right));
+}
+
+.mobile-control {
+    width: 58px;
+    height: 58px;
+    font-size: 20px;
+}
+
+}
+
+/* =========================================================
+VERY SHORT LANDSCAPE SCREENS
+========================================================= */
+
+@media (max-height: 430px) and (orientation: landscape) {
+.mobile-controls {
+padding-top: 7px;
+padding-bottom: max(7px, env(safe-area-inset-bottom));
+}
+
+.mobile-control {
+    width: 54px;
+    height: 54px;
+    font-size: 19px;
+}
+
+.game-page .hud-stat {
+    padding: 4px 7px;
+}
+
+.game-page .hud-label {
+    font-size: 8px;
+}
+
+.game-page .hud-value {
+    font-size: 12px;
+}
+
+.game-page .hud-fuel {
+    transform: scale(0.9);
+    transform-origin: top right;
+}
+
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (min-width: 641px) and (max-width: 1024px) {
+.mobile-controls {
+padding:
+18px
+max(22px, env(safe-area-inset-right))
+max(18px, env(safe-area-inset-bottom))
+max(22px, env(safe-area-inset-left));
+}
+
+.mobile-control {
+    width: 82px;
+    height: 82px;
+    font-size: 28px;
+}
+
+}
+
+/* =========================================================
+MOBILE SAFE AREAS
+========================================================= */
+
+@supports (padding: env(safe-area-inset-top)) {
+.mobile-safe-area {
+padding-top: env(safe-area-inset-top);
+padding-right: env(safe-area-inset-right);
+padding-bottom: env(safe-area-inset-bottom);
+padding-left: env(safe-area-inset-left);
+}
+}
+
+/* =========================================================
+MOBILE SELECTION / SCROLLING
+========================================================= */
+
+.mobile-no-select {
+user-select: none;
+-webkit-user-select: none;
+}
+
+.mobile-scroll {
+overflow-y: auto;
+-webkit-overflow-scrolling: touch;
+overscroll-behavior-y: contain;
+}
+
+/* =========================================================
+MOBILE ORIENTATION SCREEN
+========================================================= */
+
+#orientation-screen {
+position: fixed;
+inset: 0;
+z-index: 9999;
+
+display: none;
+align-items: center;
+justify-content: center;
+
+padding:
+    24px
+    max(24px, env(safe-area-inset-right))
+    24px
+    max(24px, env(safe-area-inset-left));
+
+background: var(--bg-dark);
+color: var(--text);
+
+text-align: center;
+
+}
+
+.orientation-content {
+width: min(340px, 100%);
+}
+
+.orientation-icon {
+width: 72px;
+height: 72px;
+margin: 0 auto 22px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border: 1px solid var(--border);
+border-radius: 18px;
+
+background: var(--bg-card);
+color: var(--primary);
+
+font-size: 30px;
+
+animation: orientationTilt 2.2s ease-in-out infinite;
+
+}
+
+.orientation-content h2 {
+margin: 0;
+color: var(--text);
+font-size: 24px;
+font-weight: 800;
+}
+
+.orientation-content p {
+margin: 9px 0 0;
+color: var(--text-secondary);
+font-size: 13px;
+line-height: 1.6;
+}
+
+@keyframes orientationTilt {
+0%,
+100% {
+transform: rotate(0deg);
+}
+
+35% {
+    transform: rotate(-12deg);
+}
+
+65% {
+    transform: rotate(12deg);
+}
+
+}
+
+/* =========================================================
+ORIENTATION DISPLAY
+========================================================= */
+
+@media (max-width: 900px) and (orientation: portrait) {
+#orientation-screen {
+display: flex;
+}
+}
+
+/* =========================================================
+DESKTOP — HIDE MOBILE CONTROLS
+========================================================= */
+
+@media (min-width: 901px) {
+.mobile-controls {
+display: none !important;
+}
+
+#orientation-screen {
+    display: none !important;
+}
+
+}
+
+/* =========================================================
+TOUCH DEVICE ENHANCEMENTS
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+.mobile-control:hover {
+background: rgba(17, 17, 17, 0.72);
+border-color: rgba(255, 255, 255, 0.14);
+}
+
+.mobile-control:active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn:hover {
+    transform: none;
+}
+
+}
+
+/* =========================================================
+REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+.mobile-control,
+.orientation-icon {
+transition: none;
+animation: none;
+}
+}
+
+/* =========================================================
+MOBILE PRINT SAFETY
+========================================================= */
+
+@media print {
+.mobile-controls,
+#orientation-screen {
+display: none !important;
+}
+}
