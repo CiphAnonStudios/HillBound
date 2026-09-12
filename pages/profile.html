@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#111111">
+
+    <meta
+        name="description"
+        content="View your Hillbound profile, progress, stats, and achievements."
+    >
+
+    <title>Hillbound — Profile</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../assets/images/ui/favicon.png"
+    >
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- Profile Styles -->
+    <link rel="stylesheet" href="../css/profile.css">
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="profile-page">
+
+    <!-- ==========================================
+         PAGE HEADER
+    =========================================== -->
+
+    <header class="page-header">
+
+        <a
+            href="../index.html"
+            class="header-logo"
+            aria-label="Return to Hillbound home"
+        >
+            <img
+                src="../assets/images/ui/logo.png"
+                alt="Hillbound"
+            >
+        </a>
+
+
+        <nav
+            class="main-navigation"
+            aria-label="Main navigation"
+        >
+
+            <a href="game.html">
+                Play
+            </a>
+
+            <a href="garage.html">
+                Garage
+            </a>
+
+            <a href="maps.html">
+                Maps
+            </a>
+
+            <a href="leaderboard.html">
+                Leaderboard
+            </a>
+
+        </nav>
+
+
+        <div class="header-account">
+
+            <a
+                href="profile.html"
+                class="active"
+                aria-current="page"
+            >
+                Profile
+            </a>
+
+            <a href="settings.html">
+                Settings
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         PROFILE CONTENT
+    =========================================== -->
+
+    <main class="profile-container">
+
+        <!-- ======================================
+             PROFILE HERO
+        ======================================= -->
+
+        <section class="profile-hero">
+
+            <div class="profile-avatar">
+
+                <img
+                    id="profile-avatar-image"
+                    src="../assets/images/icons/profile.png"
+                    alt="Profile avatar"
+                >
+
+            </div>
+
+
+            <div class="profile-identity">
+
+                <span class="eyebrow">
+                    DRIVER
+                </span>
+
+                <h1 id="profile-username">
+                    Guest
+                </h1>
+
+                <p id="profile-email">
+                    Not logged in
+                </p>
+
+                <span
+                    id="profile-member-since"
+                    class="member-since"
+                >
+                    Hillbound Driver
+                </span>
+
+            </div>
+
+
+            <div class="profile-actions">
+
+                <a
+                    href="settings.html"
+                    class="secondary-button"
+                >
+                    Settings
+                </a>
+
+                <button
+                    type="button"
+                    id="logout-button"
+                    class="secondary-button"
+                >
+                    Log Out
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             PLAYER LEVEL
+        ======================================= -->
+
+        <section class="level-section">
+
+            <div class="level-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        DRIVER LEVEL
+                    </span>
+
+                    <h2>
+                        Level
+                        <strong id="player-level">
+                            1
+                        </strong>
+                    </h2>
+
+                </div>
+
+                <div class="xp-display">
+
+                    <strong id="player-xp">
+                        0
+                    </strong>
+
+                    <span>
+                        XP
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="xp-bar">
+
+                <span
+                    id="xp-fill"
+                    style="width: 0%;"
+                ></span>
+
+            </div>
+
+
+            <div class="xp-footer">
+
+                <span>
+                    <strong id="current-xp">
+                        0
+                    </strong>
+                    XP
+                </span>
+
+                <span>
+                    <strong id="next-level-xp">
+                        100
+                    </strong>
+                    XP
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             QUICK STATS
+        ======================================= -->
+
+        <section class="stats-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        YOUR RECORD
+                    </p>
+
+                    <h2>
+                        Statistics
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <!-- Best Distance -->
+                <article class="stat-card">
+
+                    <img
+                        src="../assets/images/icons/map.png"
+                        alt=""
+                    >
+
+                    <span>
+                        Best Distance
+                    </span>
+
+                    <strong id="stat-best-distance">
+                        0 m
+                    </strong>
+
+                </article>
+
+
+                <!-- Total Distance -->
+                <article class="stat-card">
+
+                    <img
+                        src="../assets/images/icons/map.png"
+                        alt=""
+                    >
+
+                    <span>
+                        Total Distance
+                    </span>
+
+                    <strong id="stat-total-distance">
+                        0 m
+                    </strong>
+
+                </article>
+
+
+                <!-- Coins -->
+                <article class="stat-card">
+
+                    <img
+                        src="../assets/images/collectibles/coin.png"
+                        alt=""
+                    >
+
+                    <span>
+                        Coins Collected
+                    </span>
+
+                    <strong id="stat-coins">
+                        0
+                    </strong>
+
+                </article>
+
+
+                <!-- Runs -->
+                <article class="stat-card">
+
+                    <img
+                        src="../assets/images/icons/garage.png"
+                        alt=""
+                    >
+
+                    <span>
+                        Runs
+                    </span>
+
+                    <strong id="stat-runs">
+                        0
+                    </strong>
+
+                </article>
+
+
+                <!-- Vehicles -->
+                <article class="stat-card">
+
+                    <img
+                        src="../assets/images/icons/garage.png"
+                        alt=""
+                    >
+
+                    <span>
+                        Vehicles
+                    </span>
+
+                    <strong id="stat-vehicles">
+                        1
+                    </strong>
+
+                </article>
+
+
+                <!-- Maps -->
+                <article class="stat-card">
+
+                    <img
+                        src="../assets/images/icons/map.png"
+                        alt=""
+                    >
+
+                    <span>
+                        Maps Unlocked
+                    </span>
+
+                    <strong id="stat-maps">
+                        1
+                    </strong>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             BEST RECORDS
+        ======================================= -->
+
+        <section class="records-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        PERSONAL RECORDS
+                    </p>
+
+                    <h2>
+                        Best Runs
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="records-grid">
+
+                <!-- Countryside -->
+                <article class="record-card">
+
+                    <div class="record-image">
+
+                        <img
+                            src="../assets/images/backgrounds/countryside.png"
+                            alt="Countryside"
+                        >
+
+                    </div>
+
+                    <div class="record-content">
+
+                        <span>
+                            Countryside
+                        </span>
+
+                        <strong id="record-countryside">
+                            0 m
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Desert -->
+                <article class="record-card">
+
+                    <div class="record-image">
+
+                        <img
+                            src="../assets/images/backgrounds/desert.png"
+                            alt="Desert"
+                        >
+
+                    </div>
+
+                    <div class="record-content">
+
+                        <span>
+                            Desert
+                        </span>
+
+                        <strong id="record-desert">
+                            0 m
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Moon -->
+                <article class="record-card">
+
+                    <div class="record-image">
+
+                        <img
+                            src="../assets/images/backgrounds/moon.png"
+                            alt="Moon"
+                        >
+
+                    </div>
+
+                    <div class="record-content">
+
+                        <span>
+                            Moon
+                        </span>
+
+                        <strong id="record-moon">
+                            0 m
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Snow -->
+                <article class="record-card">
+
+                    <div class="record-image">
+
+                        <img
+                            src="../assets/images/backgrounds/snow.png"
+                            alt="Snow"
+                        >
+
+                    </div>
+
+                    <div class="record-content">
+
+                        <span>
+                            Snow
+                        </span>
+
+                        <strong id="record-snow">
+                            0 m
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             ACHIEVEMENTS
+        ======================================= -->
+
+        <section class="achievements-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        PROGRESS
+                    </p>
+
+                    <h2>
+                        Achievements
+                    </h2>
+
+                </div>
+
+                <span
+                    id="achievement-count"
+                    class="section-count"
+                >
+                    0 / 0
+                </span>
+
+            </div>
+
+
+            <div
+                id="achievements-grid"
+                class="achievements-grid"
+            >
+
+                <!-- First Run -->
+                <article
+                    class="achievement-card"
+                    data-achievement="first-run"
+                >
+
+                    <div class="achievement-icon">
+                        🚗
+                    </div>
+
+                    <div class="achievement-content">
+
+                        <h3>
+                            First Run
+                        </h3>
+
+                        <p>
+                            Complete your first run.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 1000m -->
+                <article
+                    class="achievement-card"
+                    data-achievement="distance-1000"
+                >
+
+                    <div class="achievement-icon">
+                        🏁
+                    </div>
+
+                    <div class="achievement-content">
+
+                        <h3>
+                            Getting Started
+                        </h3>
+
+                        <p>
+                            Travel 1,000 meters in a single run.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 5000m -->
+                <article
+                    class="achievement-card"
+                    data-achievement="distance-5000"
+                >
+
+                    <div class="achievement-icon">
+                        🏆
+                    </div>
+
+                    <div class="achievement-content">
+
+                        <h3>
+                            Going the Distance
+                        </h3>
+
+                        <p>
+                            Travel 5,000 meters in a single run.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Coins -->
+                <article
+                    class="achievement-card"
+                    data-achievement="coins-100"
+                >
+
+                    <div class="achievement-icon">
+                        🪙
+                    </div>
+
+                    <div class="achievement-content">
+
+                        <h3>
+                            Coin Collector
+                        </h3>
+
+                        <p>
+                            Collect 100 coins.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Vehicle -->
+                <article
+                    class="achievement-card"
+                    data-achievement="vehicles"
+                >
+
+                    <div class="achievement-icon">
+                        🔧
+                    </div>
+
+                    <div class="achievement-content">
+
+                        <h3>
+                            Mechanic
+                        </h3>
+
+                        <p>
+                            Unlock another vehicle.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Upgrade -->
+                <article
+                    class="achievement-card"
+                    data-achievement="upgrade"
+                >
+
+                    <div class="achievement-icon">
+                        ⚙️
+                    </div>
+
+                    <div class="achievement-content">
+
+                        <h3>
+                            Tuned Up
+                        </h3>
+
+                        <p>
+                            Purchase your first vehicle upgrade.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             ACCOUNT STATUS
+        ======================================= -->
+
+        <section class="account-section">
+
+            <div class="account-card">
+
+                <div>
+
+                    <span class="eyebrow">
+                        ACCOUNT
+                    </span>
+
+                    <h2 id="account-status-title">
+                        Guest Account
+                    </h2>
+
+                    <p id="account-status-text">
+                        Log in to save your progress across devices,
+                        compete on leaderboards, and unlock achievements.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="account-actions"
+                    class="account-actions"
+                >
+
+                    <a
+                        href="login.html"
+                        class="secondary-button"
+                    >
+                        Log In
+                    </a>
+
+                    <a
+                        href="register.html"
+                        class="primary-button"
+                    >
+                        Create Account
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         NOTIFICATION
+    =========================================== -->
+
+    <div
+        id="profile-notification"
+        class="profile-notification"
+        role="status"
+        aria-live="polite"
+        hidden
+    ></div>
+
+
+    <!-- ==========================================
+         SCRIPTS
+    =========================================== -->
+
+    <script
+        src="../js/player/player.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/player/progress.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/player/achievements.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/auth/session.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/auth/logout.js"
+        defer
+    ></script>
+
+</body>
+</html>
