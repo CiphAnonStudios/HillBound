@@ -1,0 +1,314 @@
+/* =========================================================
+   HILLBOUND — ORIENTATION
+   css/orientation.css
+   Portrait / landscape orientation handling
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Base Orientation Screen
+   --------------------------------------------------------- */
+
+#orientation-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    min-height: 100dvh;
+
+    padding: 24px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 106, 0, 0.08),
+            transparent 55%
+        ),
+        #111111;
+
+    color: #ffffff;
+    text-align: center;
+
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* ---------------------------------------------------------
+   Orientation Content
+   --------------------------------------------------------- */
+
+.orientation-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: min(420px, 100%);
+    padding: 32px 24px;
+}
+
+/* ---------------------------------------------------------
+   Orientation Icon
+   --------------------------------------------------------- */
+
+.orientation-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 82px;
+    height: 82px;
+    margin-bottom: 24px;
+
+    border: 1px solid rgba(255, 106, 0, 0.3);
+    border-radius: 24px;
+
+    background: rgba(255, 106, 0, 0.08);
+
+    font-size: 42px;
+    line-height: 1;
+
+    box-shadow:
+        0 0 0 8px rgba(255, 106, 0, 0.025),
+        0 12px 40px rgba(0, 0, 0, 0.35);
+
+    animation: orientationFloat 2.5s ease-in-out infinite;
+}
+
+/* ---------------------------------------------------------
+   Heading
+   --------------------------------------------------------- */
+
+.orientation-content h1 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: clamp(24px, 5vw, 34px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+/* ---------------------------------------------------------
+   Description
+   --------------------------------------------------------- */
+
+.orientation-content p {
+    max-width: 330px;
+    margin: 0;
+
+    color: #b7b7b7;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* ---------------------------------------------------------
+   Rotate Animation
+   --------------------------------------------------------- */
+
+.orientation-icon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 96px;
+    height: 96px;
+
+    border: 2px solid transparent;
+    border-top-color: rgba(255, 106, 0, 0.45);
+    border-radius: 50%;
+
+    animation: orientationRotate 2.5s linear infinite;
+}
+
+/* ---------------------------------------------------------
+   Portrait Devices
+   --------------------------------------------------------- */
+
+@media screen and (orientation: portrait) and (max-width: 1024px) {
+    #orientation-screen {
+        display: flex;
+    }
+
+    .orientation-content {
+        display: flex;
+    }
+}
+
+/* ---------------------------------------------------------
+   Landscape Devices
+   --------------------------------------------------------- */
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+    #orientation-screen {
+        display: none;
+    }
+}
+
+/* ---------------------------------------------------------
+   Desktop
+   --------------------------------------------------------- */
+
+@media screen and (min-width: 1025px) {
+    #orientation-screen {
+        display: none !important;
+    }
+}
+
+/* ---------------------------------------------------------
+   Very Small Phones
+   --------------------------------------------------------- */
+
+@media screen and (orientation: portrait) and (max-width: 360px) {
+    .orientation-content {
+        padding: 24px 18px;
+    }
+
+    .orientation-icon {
+        width: 68px;
+        height: 68px;
+        margin-bottom: 20px;
+
+        border-radius: 20px;
+        font-size: 34px;
+    }
+
+    .orientation-content h1 {
+        font-size: 25px;
+    }
+
+    .orientation-content p {
+        font-size: 14px;
+    }
+}
+
+/* ---------------------------------------------------------
+   Landscape Short Screens
+   --------------------------------------------------------- */
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    #orientation-screen {
+        display: none;
+    }
+}
+
+/* ---------------------------------------------------------
+   Safe Areas
+   --------------------------------------------------------- */
+
+@supports (padding: env(safe-area-inset-top)) {
+    #orientation-screen {
+        padding-top: max(24px, env(safe-area-inset-top));
+        padding-right: max(24px, env(safe-area-inset-right));
+        padding-bottom: max(24px, env(safe-area-inset-bottom));
+        padding-left: max(24px, env(safe-area-inset-left));
+    }
+}
+
+/* ---------------------------------------------------------
+   Reduced Motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .orientation-icon,
+    .orientation-icon::after {
+        animation: none;
+    }
+}
+
+/* ---------------------------------------------------------
+   Animations
+   --------------------------------------------------------- */
+
+@keyframes orientationFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(2deg);
+    }
+}
+
+@keyframes orientationRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------------------------------------------------------
+   Prevent Accidental Selection
+   --------------------------------------------------------- */
+
+#orientation-screen *,
+#orientation-screen::before,
+#orientation-screen::after {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------------------------------------------------------
+   Orientation Background Decoration
+   --------------------------------------------------------- */
+
+#orientation-screen::before {
+    content: "";
+
+    position: absolute;
+    inset: -30%;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255, 106, 0, 0.06),
+            transparent 30%
+        );
+
+    pointer-events: none;
+}
+
+#orientation-screen::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.015) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.015) 1px,
+            transparent 1px
+        );
+
+    background-size: 32px 32px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 30%,
+        black 70%,
+        transparent
+    );
+
+    pointer-events: none;
+}
