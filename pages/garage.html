@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#111111">
+
+    <meta
+        name="description"
+        content="View, customize, and upgrade your vehicles in Hillbound."
+    >
+
+    <title>Hillbound — Garage</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../assets/images/ui/favicon.png"
+    >
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- Garage Styles -->
+    <link rel="stylesheet" href="../css/garage.css">
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="garage-page">
+
+    <!-- ==========================================
+         PAGE HEADER
+    =========================================== -->
+
+    <header class="page-header">
+
+        <a
+            href="../index.html"
+            class="header-logo"
+            aria-label="Return to Hillbound home"
+        >
+            <img
+                src="../assets/images/ui/logo.png"
+                alt="Hillbound"
+            >
+        </a>
+
+        <nav class="main-navigation" aria-label="Main navigation">
+
+            <a href="game.html">
+                Play
+            </a>
+
+            <a
+                href="garage.html"
+                class="active"
+                aria-current="page"
+            >
+                Garage
+            </a>
+
+            <a href="maps.html">
+                Maps
+            </a>
+
+            <a href="leaderboard.html">
+                Leaderboard
+            </a>
+
+        </nav>
+
+        <div class="header-account">
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a href="settings.html">
+                Settings
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         GARAGE CONTENT
+    =========================================== -->
+
+    <main class="garage-container">
+
+        <!-- Page Heading -->
+        <section class="page-title">
+
+            <p class="eyebrow">
+                YOUR GARAGE
+            </p>
+
+            <h1>
+                Vehicles
+            </h1>
+
+            <p>
+                Choose your ride and upgrade it for the road ahead.
+            </p>
+
+        </section>
+
+
+        <!-- ======================================
+             VEHICLE SELECTOR
+        ======================================= -->
+
+        <section class="vehicle-selector">
+
+            <button
+                type="button"
+                class="vehicle-tab active"
+                data-vehicle="starter-car"
+            >
+                <img
+                    src="../assets/images/vehicles/cars/starter-car.png"
+                    alt=""
+                >
+
+                <span>
+                    Starter Car
+                </span>
+            </button>
+
+
+            <button
+                type="button"
+                class="vehicle-tab"
+                data-vehicle="starter-bike"
+            >
+                <img
+                    src="../assets/images/vehicles/bikes/starter-bike.png"
+                    alt=""
+                >
+
+                <span>
+                    Starter Bike
+                </span>
+            </button>
+
+
+            <button
+                type="button"
+                class="vehicle-tab"
+                data-vehicle="starter-truck"
+            >
+                <img
+                    src="../assets/images/vehicles/trucks/starter-truck.png"
+                    alt=""
+                >
+
+                <span>
+                    Starter Truck
+                </span>
+            </button>
+
+        </section>
+
+
+        <!-- ======================================
+             VEHICLE DISPLAY
+        ======================================= -->
+
+        <section class="garage-main">
+
+            <div class="vehicle-display-panel">
+
+                <div class="vehicle-display">
+
+                    <div class="vehicle-display-background"></div>
+
+                    <img
+                        id="vehicle-image"
+                        class="vehicle-image"
+                        src="../assets/images/vehicles/cars/starter-car.png"
+                        alt="Starter Car"
+                    >
+
+                </div>
+
+
+                <div class="vehicle-info">
+
+                    <span
+                        id="vehicle-type"
+                        class="vehicle-type"
+                    >
+                        CAR
+                    </span>
+
+                    <h2 id="vehicle-name">
+                        Starter Car
+                    </h2>
+
+                    <p id="vehicle-description">
+                        A reliable all-around vehicle built for your first climb.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================
+                 VEHICLE STATS
+            =================================== -->
+
+            <div class="vehicle-stats-panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        Vehicle Stats
+                    </h2>
+
+                </div>
+
+
+                <div class="stat-list">
+
+                    <div class="stat">
+
+                        <div class="stat-header">
+                            <span>Speed</span>
+                            <span id="speed-value">50</span>
+                        </div>
+
+                        <div class="stat-bar">
+                            <span
+                                id="speed-bar"
+                                style="width: 50%;"
+                            ></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-header">
+                            <span>Acceleration</span>
+                            <span id="acceleration-value">50</span>
+                        </div>
+
+                        <div class="stat-bar">
+                            <span
+                                id="acceleration-bar"
+                                style="width: 50%;"
+                            ></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-header">
+                            <span>Weight</span>
+                            <span id="weight-value">50</span>
+                        </div>
+
+                        <div class="stat-bar">
+                            <span
+                                id="weight-bar"
+                                style="width: 50%;"
+                            ></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-header">
+                            <span>Torque</span>
+                            <span id="torque-value">50</span>
+                        </div>
+
+                        <div class="stat-bar">
+                            <span
+                                id="torque-bar"
+                                style="width: 50%;"
+                            ></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-header">
+                            <span>Grip</span>
+                            <span id="grip-value">50</span>
+                        </div>
+
+                        <div class="stat-bar">
+                            <span
+                                id="grip-bar"
+                                style="width: 50%;"
+                            ></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-header">
+                            <span>Suspension</span>
+                            <span id="suspension-value">50</span>
+                        </div>
+
+                        <div class="stat-bar">
+                            <span
+                                id="suspension-bar"
+                                style="width: 50%;"
+                            ></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-header">
+                            <span>Fuel Capacity</span>
+                            <span id="fuel-value">50</span>
+                        </div>
+
+                        <div class="stat-bar">
+                            <span
+                                id="fuel-bar"
+                                style="width: 50%;"
+                            ></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-header">
+                            <span>Stability</span>
+                            <span id="stability-value">50</span>
+                        </div>
+
+                        <div class="stat-bar">
+                            <span
+                                id="stability-bar"
+                                style="width: 50%;"
+                            ></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             UPGRADES
+        ======================================= -->
+
+        <section class="upgrades-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        PERFORMANCE
+                    </p>
+
+                    <h2>
+                        Upgrades
+                    </h2>
+
+                </div>
+
+                <div class="currency-display">
+
+                    <img
+                        src="../assets/images/collectibles/coin.png"
+                        alt=""
+                    >
+
+                    <span id="garage-coins">
+                        0
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="upgrade-grid">
+
+                <!-- Engine -->
+                <article
+                    class="upgrade-card"
+                    data-upgrade="engine"
+                >
+
+                    <div class="upgrade-icon">
+
+                        <img
+                            src="../assets/images/icons/engine.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <div class="upgrade-content">
+
+                        <h3>
+                            Engine
+                        </h3>
+
+                        <p>
+                            Increase acceleration and power.
+                        </p>
+
+                        <div class="upgrade-level">
+
+                            <span>
+                                Level
+                            </span>
+
+                            <strong id="engine-level">
+                                1
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="upgrade-button"
+                        data-upgrade-action="engine"
+                    >
+                        Upgrade
+                    </button>
+
+                </article>
+
+
+                <!-- Tires -->
+                <article
+                    class="upgrade-card"
+                    data-upgrade="tires"
+                >
+
+                    <div class="upgrade-icon">
+
+                        <img
+                            src="../assets/images/icons/tires.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <div class="upgrade-content">
+
+                        <h3>
+                            Tires
+                        </h3>
+
+                        <p>
+                            Improve grip and control.
+                        </p>
+
+                        <div class="upgrade-level">
+
+                            <span>
+                                Level
+                            </span>
+
+                            <strong id="tires-level">
+                                1
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="upgrade-button"
+                        data-upgrade-action="tires"
+                    >
+                        Upgrade
+                    </button>
+
+                </article>
+
+
+                <!-- Suspension -->
+                <article
+                    class="upgrade-card"
+                    data-upgrade="suspension"
+                >
+
+                    <div class="upgrade-icon">
+
+                        <img
+                            src="../assets/images/icons/suspension.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <div class="upgrade-content">
+
+                        <h3>
+                            Suspension
+                        </h3>
+
+                        <p>
+                            Improve landing and terrain handling.
+                        </p>
+
+                        <div class="upgrade-level">
+
+                            <span>
+                                Level
+                            </span>
+
+                            <strong id="suspension-level">
+                                1
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="upgrade-button"
+                        data-upgrade-action="suspension"
+                    >
+                        Upgrade
+                    </button>
+
+                </article>
+
+
+                <!-- Fuel -->
+                <article
+                    class="upgrade-card"
+                    data-upgrade="fuel"
+                >
+
+                    <div class="upgrade-icon">
+
+                        <img
+                            src="../assets/images/icons/fuel.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                    <div class="upgrade-content">
+
+                        <h3>
+                            Fuel Tank
+                        </h3>
+
+                        <p>
+                            Increase your maximum fuel capacity.
+                        </p>
+
+                        <div class="upgrade-level">
+
+                            <span>
+                                Level
+                            </span>
+
+                            <strong id="fuel-level">
+                                1
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="upgrade-button"
+                        data-upgrade-action="fuel"
+                    >
+                        Upgrade
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             VEHICLE ACTIONS
+        ======================================= -->
+
+        <section class="garage-actions">
+
+            <button
+                type="button"
+                id="select-vehicle-button"
+                class="garage-button primary-button"
+            >
+                Select Vehicle
+            </button>
+
+            <button
+                type="button"
+                id="reset-upgrades-button"
+                class="garage-button secondary-button"
+            >
+                Reset Upgrades
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         NOTIFICATION
+    =========================================== -->
+
+    <div
+        id="garage-notification"
+        class="garage-notification"
+        role="status"
+        aria-live="polite"
+        hidden
+    ></div>
+
+
+    <!-- ==========================================
+         SCRIPTS
+    =========================================== -->
+
+    <script
+        src="../js/vehicles/vehicles.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/vehicles/car.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/vehicles/bike.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/vehicles/truck.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/garage/upgrades.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/garage/vehicleDisplay.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/garage/garage.js"
+        defer
+    ></script>
+
+</body>
+</html>
