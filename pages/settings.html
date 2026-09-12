@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#111111">
+
+    <meta
+        name="description"
+        content="Manage your Hillbound game and account settings."
+    >
+
+    <title>Hillbound — Settings</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../assets/images/ui/favicon.png"
+    >
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- Settings Styles -->
+    <link rel="stylesheet" href="../css/settings.css">
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="settings-page">
+
+    <!-- ==========================================
+         PAGE HEADER
+    =========================================== -->
+
+    <header class="page-header">
+
+        <a
+            href="../index.html"
+            class="header-logo"
+            aria-label="Return to Hillbound home"
+        >
+            <img
+                src="../assets/images/ui/logo.png"
+                alt="Hillbound"
+            >
+        </a>
+
+
+        <nav
+            class="main-navigation"
+            aria-label="Main navigation"
+        >
+
+            <a href="game.html">
+                Play
+            </a>
+
+            <a href="garage.html">
+                Garage
+            </a>
+
+            <a href="maps.html">
+                Maps
+            </a>
+
+            <a href="leaderboard.html">
+                Leaderboard
+            </a>
+
+        </nav>
+
+
+        <div class="header-account">
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a
+                href="settings.html"
+                class="active"
+                aria-current="page"
+            >
+                Settings
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         SETTINGS CONTENT
+    =========================================== -->
+
+    <main class="settings-container">
+
+        <!-- Page Heading -->
+        <section class="page-title">
+
+            <p class="eyebrow">
+                OPTIONS
+            </p>
+
+            <h1>
+                Settings
+            </h1>
+
+            <p>
+                Customize your Hillbound experience.
+            </p>
+
+        </section>
+
+
+        <!-- ======================================
+             GAMEPLAY SETTINGS
+        ======================================= -->
+
+        <section class="settings-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        GAMEPLAY
+                    </p>
+
+                    <h2>
+                        Game Settings
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-list">
+
+                <!-- Show Tutorial -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Show Tutorial
+                        </h3>
+
+                        <p>
+                            Show helpful instructions when playing for the first time.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="tutorial-toggle"
+                            checked
+                        >
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Auto Pause -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Auto Pause
+                        </h3>
+
+                        <p>
+                            Automatically pause the game when the browser loses focus.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="auto-pause-toggle"
+                            checked
+                        >
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Screen Shake -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Screen Shake
+                        </h3>
+
+                        <p>
+                            Add screen movement during crashes and strong impacts.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="screen-shake-toggle"
+                            checked
+                        >
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Show FPS -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Show FPS
+                        </h3>
+
+                        <p>
+                            Display the current frame rate during gameplay.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="fps-toggle"
+                        >
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             AUDIO SETTINGS
+        ======================================= -->
+
+        <section class="settings-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        SOUND
+                    </p>
+
+                    <h2>
+                        Audio
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-list">
+
+                <!-- Master Volume -->
+                <div class="setting-row setting-row-slider">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Master Volume
+                        </h3>
+
+                        <p>
+                            Control the overall game volume.
+                        </p>
+
+                    </div>
+
+                    <div class="range-setting">
+
+                        <input
+                            type="range"
+                            id="master-volume"
+                            min="0"
+                            max="100"
+                            value="100"
+                        >
+
+                        <output
+                            id="master-volume-value"
+                            for="master-volume"
+                        >
+                            100%
+                        </output>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Music Volume -->
+                <div class="setting-row setting-row-slider">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Music
+                        </h3>
+
+                        <p>
+                            Control menu and gameplay music.
+                        </p>
+
+                    </div>
+
+                    <div class="range-setting">
+
+                        <input
+                            type="range"
+                            id="music-volume"
+                            min="0"
+                            max="100"
+                            value="70"
+                        >
+
+                        <output
+                            id="music-volume-value"
+                            for="music-volume"
+                        >
+                            70%
+                        </output>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Effects Volume -->
+                <div class="setting-row setting-row-slider">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Sound Effects
+                        </h3>
+
+                        <p>
+                            Control engines, crashes, coins, buttons, and other effects.
+                        </p>
+
+                    </div>
+
+                    <div class="range-setting">
+
+                        <input
+                            type="range"
+                            id="effects-volume"
+                            min="0"
+                            max="100"
+                            value="100"
+                        >
+
+                        <output
+                            id="effects-volume-value"
+                            for="effects-volume"
+                        >
+                            100%
+                        </output>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             GRAPHICS SETTINGS
+        ======================================= -->
+
+        <section class="settings-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        DISPLAY
+                    </p>
+
+                    <h2>
+                        Graphics
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-list">
+
+                <!-- Graphics Quality -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Graphics Quality
+                        </h3>
+
+                        <p>
+                            Choose how much visual detail is rendered.
+                        </p>
+
+                    </div>
+
+                    <select
+                        id="graphics-quality"
+                        class="settings-select"
+                    >
+
+                        <option value="low">
+                            Low
+                        </option>
+
+                        <option
+                            value="medium"
+                            selected
+                        >
+                            Medium
+                        </option>
+
+                        <option value="high">
+                            High
+                        </option>
+
+                        <option value="auto">
+                            Auto
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Particles -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Particles
+                        </h3>
+
+                        <p>
+                            Show dust, smoke, and other visual effects.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="particles-toggle"
+                            checked
+                        >
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Background Effects -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Background Effects
+                        </h3>
+
+                        <p>
+                            Enable animated background scenery and environmental effects.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="background-effects-toggle"
+                            checked
+                        >
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             CONTROLS
+        ======================================= -->
+
+        <section class="settings-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        CONTROLS
+                    </p>
+
+                    <h2>
+                        Controls
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-list">
+
+                <!-- Control Scheme -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Control Scheme
+                        </h3>
+
+                        <p>
+                            Choose how you control your vehicle.
+                        </p>
+
+                    </div>
+
+                    <select
+                        id="control-scheme"
+                        class="settings-select"
+                    >
+
+                        <option
+                            value="keyboard"
+                            selected
+                        >
+                            Keyboard
+                        </option>
+
+                        <option value="touch">
+                            Touch
+                        </option>
+
+                        <option value="auto">
+                            Automatic
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Mobile Controls -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Mobile Controls
+                        </h3>
+
+                        <p>
+                            Display touch controls when playing on a mobile device.
+                        </p>
+
+                    </div>
+
+                    <label class="toggle">
+
+                        <input
+                            type="checkbox"
+                            id="mobile-controls-toggle"
+                            checked
+                        >
+
+                        <span class="toggle-slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             ACCOUNT SETTINGS
+        ======================================= -->
+
+        <section class="settings-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        ACCOUNT
+                    </p>
+
+                    <h2>
+                        Account
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-list">
+
+                <!-- Profile -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Profile
+                        </h3>
+
+                        <p>
+                            View your player profile and statistics.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="profile.html"
+                        class="settings-action"
+                    >
+                        Open
+                    </a>
+
+                </div>
+
+
+                <!-- Garage -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Garage
+                        </h3>
+
+                        <p>
+                            Manage your vehicles and upgrades.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="garage.html"
+                        class="settings-action"
+                    >
+                        Open
+                    </a>
+
+                </div>
+
+
+                <!-- Leaderboard -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Leaderboard
+                        </h3>
+
+                        <p>
+                            View your position and compete with other players.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="leaderboard.html"
+                        class="settings-action"
+                    >
+                        Open
+                    </a>
+
+                </div>
+
+
+                <!-- Logout -->
+                <div class="setting-row danger-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Log Out
+                        </h3>
+
+                        <p>
+                            Sign out of your Hillbound account on this device.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="settings-logout-button"
+                        class="settings-action danger-button"
+                    >
+                        Log Out
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             DATA SETTINGS
+        ======================================= -->
+
+        <section class="settings-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        DATA
+                    </p>
+
+                    <h2>
+                        Save Data
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-list">
+
+                <!-- Cloud Saves -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Cloud Saves
+                        </h3>
+
+                        <p>
+                            Save your progress to your Hillbound account.
+                        </p>
+
+                    </div>
+
+                    <span
+                        id="cloud-save-status"
+                        class="setting-status"
+                    >
+                        Not Connected
+                    </span>
+
+                </div>
+
+
+                <!-- Local Data -->
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <h3>
+                            Local Save Data
+                        </h3>
+
+                        <p>
+                            Manage progress saved on this device.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="clear-local-data"
+                        class="settings-action danger-button"
+                    >
+                        Clear Data
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             RESET SETTINGS
+        ======================================= -->
+
+        <section class="reset-section">
+
+            <div>
+
+                <span class="eyebrow">
+                    RESET
+                </span>
+
+                <h2>
+                    Restore Default Settings
+                </h2>
+
+                <p>
+                    Reset all gameplay, audio, graphics, and control settings
+                    to their default values.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="reset-settings-button"
+                class="secondary-button"
+            >
+                Reset Settings
+            </button>
+
+        </section>
+
+
+        <!-- ======================================
+             SAVE / STATUS
+        ======================================= -->
+
+        <div class="settings-footer">
+
+            <span
+                id="settings-save-status"
+                class="save-status"
+                aria-live="polite"
+            >
+                Changes are saved automatically.
+            </span>
+
+            <a
+                href="../index.html"
+                class="back-home"
+            >
+                ← Back to Hillbound
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==========================================
+         NOTIFICATION
+    =========================================== -->
+
+    <div
+        id="settings-notification"
+        class="settings-notification"
+        role="status"
+        aria-live="polite"
+        hidden
+    ></div>
+
+
+    <!-- ==========================================
+         SCRIPTS
+    =========================================== -->
+
+    <script
+        src="../js/auth/session.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/auth/logout.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/database/saves.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/database/playerData.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/ui/notifications.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/main.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/settings.js"
+        defer
+    ></script>
+
+</body>
+                      </html>
