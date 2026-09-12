@@ -1,1 +1,605 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8"><meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+>
 
+<title>Hillbound — Game</title>
+
+<meta
+    name="description"
+    content="Play Hillbound and see how far you can climb."
+>
+
+<meta name="theme-color" content="#111111">
+
+<!-- Favicon -->
+<link
+    rel="icon"
+    type="image/png"
+    href="../assets/images/ui/favicon.png"
+>
+
+<!-- CSS -->
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/game.css">
+<link rel="stylesheet" href="../css/mobile.css">
+<link rel="stylesheet" href="../css/orientation.css">
+
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+</head><body class="game-page"><!-- =========================================================
+     ORIENTATION SCREEN
+========================================================== -->
+
+<div
+    id="orientation-screen"
+    class="orientation-screen"
+    aria-hidden="true"
+>
+
+    <div class="orientation-content">
+
+        <div
+            class="orientation-icon"
+            aria-hidden="true"
+        >
+            📱
+        </div>
+
+        <h1>
+            Rotate Your Phone
+        </h1>
+
+        <p>
+            Turn your phone sideways to play Hillbound.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     GAME LOADING SCREEN
+========================================================== -->
+
+<div
+    id="game-loading-screen"
+    class="game-loading-screen"
+>
+
+    <div class="game-loading-content">
+
+        <img
+            src="../assets/images/ui/logo.png"
+            alt="Hillbound"
+            class="game-loading-logo"
+        >
+
+        <div
+            class="loading-bar"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+        >
+            <div id="game-loading-progress"></div>
+        </div>
+
+        <p id="game-loading-text">
+            Loading game...
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     GAME
+========================================================== -->
+
+<main
+    id="game-container"
+    class="game-container"
+>
+
+    <!-- =====================================================
+         GAME CANVAS
+    ====================================================== -->
+
+    <canvas
+        id="game-canvas"
+        class="game-canvas"
+        aria-label="Hillbound gameplay"
+    ></canvas>
+
+
+    <!-- =====================================================
+         GAME HUD
+    ====================================================== -->
+
+    <section
+        id="game-hud"
+        class="game-hud"
+        aria-label="Game information"
+    >
+
+        <!-- Top Left -->
+        <div class="hud-left">
+
+            <!-- Distance -->
+            <div class="hud-stat distance-stat">
+
+                <span class="hud-label">
+                    Distance
+                </span>
+
+                <span
+                    id="distance-value"
+                    class="hud-value"
+                >
+                    0 m
+                </span>
+
+            </div>
+
+
+            <!-- Best Distance -->
+            <div class="hud-stat best-stat">
+
+                <span class="hud-label">
+                    Best
+                </span>
+
+                <span
+                    id="best-distance-value"
+                    class="hud-value"
+                >
+                    0 m
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Top Center -->
+        <div class="hud-center">
+
+            <div
+                id="map-name"
+                class="map-name"
+            >
+                Countryside
+            </div>
+
+        </div>
+
+
+        <!-- Top Right -->
+        <div class="hud-right">
+
+            <!-- Coins -->
+            <div class="hud-stat coin-stat">
+
+                <img
+                    src="../assets/images/collectibles/coin.png"
+                    alt=""
+                    aria-hidden="true"
+                >
+
+                <span
+                    id="coin-value"
+                    class="hud-value"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <!-- Fuel -->
+            <div class="hud-stat fuel-stat">
+
+                <span class="hud-label">
+                    Fuel
+                </span>
+
+                <div
+                    class="fuel-bar"
+                    aria-label="Fuel"
+                >
+
+                    <div
+                        id="fuel-fill"
+                        class="fuel-fill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Pause -->
+            <button
+                id="pause-button"
+                class="hud-button pause-button"
+                type="button"
+                aria-label="Pause game"
+            >
+                <span aria-hidden="true">
+                    ⏸
+                </span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MOBILE CONTROLS
+    ====================================================== -->
+
+    <section
+        id="mobile-controls"
+        class="mobile-controls"
+        aria-label="Mobile controls"
+    >
+
+        <!-- Left Controls -->
+        <div class="mobile-controls-left">
+
+            <button
+                id="brake-button"
+                class="control-button brake-button"
+                type="button"
+                aria-label="Brake and reverse"
+            >
+                <span aria-hidden="true">
+                    ◀
+                </span>
+            </button>
+
+        </div>
+
+
+        <!-- Right Controls -->
+        <div class="mobile-controls-right">
+
+            <button
+                id="gas-button"
+                class="control-button gas-button"
+                type="button"
+                aria-label="Accelerate"
+            >
+                <span aria-hidden="true">
+                    ▶
+                </span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAUSE MENU
+    ====================================================== -->
+
+    <div
+        id="pause-menu"
+        class="game-modal hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="pause-title"
+    >
+
+        <div class="game-modal-content">
+
+            <h2 id="pause-title">
+                Paused
+            </h2>
+
+
+            <div class="pause-actions">
+
+                <button
+                    id="resume-button"
+                    class="game-menu-button primary"
+                    type="button"
+                >
+                    Resume
+                </button>
+
+
+                <button
+                    id="restart-button"
+                    class="game-menu-button"
+                    type="button"
+                >
+                    Restart
+                </button>
+
+
+                <a
+                    href="../index.html"
+                    class="game-menu-button"
+                >
+                    Main Menu
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         GAME OVER
+    ====================================================== -->
+
+    <div
+        id="game-over-screen"
+        class="game-modal hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="game-over-title"
+    >
+
+        <div class="game-modal-content">
+
+            <h2 id="game-over-title">
+                Run Over
+            </h2>
+
+
+            <div class="game-over-stats">
+
+                <div class="result-stat">
+
+                    <span>
+                        Distance
+                    </span>
+
+                    <strong id="final-distance">
+                        0 m
+                    </strong>
+
+                </div>
+
+
+                <div class="result-stat">
+
+                    <span>
+                        Coins
+                    </span>
+
+                    <strong id="final-coins">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-stat">
+
+                    <span>
+                        Best
+                    </span>
+
+                    <strong id="final-best">
+                        0 m
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="game-over-actions">
+
+                <button
+                    id="game-over-restart"
+                    class="game-menu-button primary"
+                    type="button"
+                >
+                    Try Again
+                </button>
+
+
+                <a
+                    href="../index.html"
+                    class="game-menu-button"
+                >
+                    Main Menu
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ERROR MESSAGE
+    ====================================================== -->
+
+    <div
+        id="game-error"
+        class="game-error hidden"
+        role="alert"
+    >
+
+        <div class="game-error-content">
+
+            <h2>
+                Something went wrong
+            </h2>
+
+            <p id="game-error-message">
+                The game could not be loaded.
+            </p>
+
+            <button
+                id="game-error-reload"
+                class="game-menu-button"
+                type="button"
+            >
+                Reload Game
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<!-- Configuration -->
+<script
+    src="../config/gameConfig.js"
+    defer
+></script>
+
+
+<!-- Game Systems -->
+<script
+    src="../js/game/gameState.js"
+    defer
+></script>
+
+<script
+    src="../js/game/input.js"
+    defer
+></script>
+
+<script
+    src="../js/game/mobileControls.js"
+    defer
+></script>
+
+<script
+    src="../js/game/orientation.js"
+    defer
+></script>
+
+<script
+    src="../js/game/physics.js"
+    defer
+></script>
+
+<script
+    src="../js/game/collision.js"
+    defer
+></script>
+
+<script
+    src="../js/game/wheels.js"
+    defer
+></script>
+
+<script
+    src="../js/game/suspension.js"
+    defer
+></script>
+
+<script
+    src="../js/game/vehicle.js"
+    defer
+></script>
+
+<script
+    src="../js/game/terrain.js"
+    defer
+></script>
+
+<script
+    src="../js/game/terrainGenerator.js"
+    defer
+></script>
+
+<script
+    src="../js/game/camera.js"
+    defer
+></script>
+
+<script
+    src="../js/game/fuel.js"
+    defer
+></script>
+
+<script
+    src="../js/game/coins.js"
+    defer
+></script>
+
+<script
+    src="../js/game/score.js"
+    defer
+></script>
+
+
+<!-- Vehicle Systems -->
+<script
+    src="../js/vehicles/vehicles.js"
+    defer
+></script>
+
+<script
+    src="../js/vehicles/car.js"
+    defer
+></script>
+
+
+<!-- UI -->
+<script
+    src="../js/ui/hud.js"
+    defer
+></script>
+
+<script
+    src="../js/ui/modal.js"
+    defer
+></script>
+
+<script
+    src="../js/ui/notifications.js"
+    defer
+></script>
+
+<script
+    src="../js/ui/loading.js"
+    defer
+></script>
+
+<script
+    src="../js/ui/orientationScreen.js"
+    defer
+></script>
+
+
+<!-- Main Game -->
+<script
+    src="../js/game/game.js"
+    defer
+></script>
+
+</body>
+</html>
